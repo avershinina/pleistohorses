@@ -1,5 +1,7 @@
 # !/usr/bin/python3
-# importing csv module
+# 5 Oct 2017
+# run as: 
+# python3 filter.py BSNP-out.snp 20 0.98 5
 import csv
 import sys
 import pandas as pd
@@ -18,8 +20,7 @@ filenameout = sys.argv[1].replace('.snp', '_Q.filtered.snp')
 
 # initializing the titles and rows list
 fields = []
-rows = []
-chunksize =100000
+chunksize =100000 # for pandas to read output in chunks, play with this parameter
 
 # reading csv file
 with open(filename, 'r') as tsvin, open (filenameout, 'w') as tsvout:
