@@ -33,6 +33,15 @@ https://gatkforums.broadinstitute.org/gatk/discussion/comment/32399
 
 #### Visualize it!
 https://software.broadinstitute.org/gatk/documentation/article.php?id=6925
-
 http://mbontrager.org/blog/2016/08/17/Variant-Exploration
+
+# BEAST 
+#### trouble shooting
+https://taming-the-beast.github.io/tutorials/Troubleshooting/Troubleshooting.pdf
+#### tip dating
+
+https://www.biostat.washington.edu/sites/default/files/modules//2016_SISMID_13_11.pdf
+
+# LaTeX
+
 
