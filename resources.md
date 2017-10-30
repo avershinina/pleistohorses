@@ -19,3 +19,12 @@ https://www.biostars.org/p/178983/
 https://www.biostars.org/p/73678/
 ####
 
+# Variant Calling
+#### General pipeline and trutorial
+http://cbsu.tc.cornell.edu/lab/doc/variant_workshop_part2.pdf
+#### GATK tutorial
+https://qcb.ucla.edu/wp-content/uploads/sites/14/2016/03/IntroductiontoVariantCallsetEvaluationandFilteringTutorialAppendix-LA2016.pdf
+#### Best Practices - how to apply hard filters
+https://gatkforums.broadinstitute.org/gatk/discussion/2806/howto-apply-hard-filters-to-a-call-set
+#### Best Practices - VQSR
+https://gatkforums.broadinstitute.org/gatk/discussion/comment/32399
