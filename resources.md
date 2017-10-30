@@ -13,6 +13,7 @@ http://www.popgen.dk/angsd/index.php/Thetas,Tajima,Neutrality_tests
 
 # Watterson thetha
 https://www.biostars.org/p/150600/
+
 https://www.biostars.org/p/178983/
 
 # Raxml tree making
