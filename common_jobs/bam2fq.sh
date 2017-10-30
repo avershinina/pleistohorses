@@ -9,3 +9,5 @@ echo "Converting to fastq: "$i
 bedtools bamtofastq -i $i -fq $i".fq"
 
 done
+
+# test
