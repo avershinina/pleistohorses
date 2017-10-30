@@ -11,10 +11,14 @@ http://www.popgen.dk/angsd/index.php/Filters
 #### Heterozygosity
 http://www.popgen.dk/angsd/index.php/Thetas,Tajima,Neutrality_tests
 
+#### SFS
+https://github.com/ANGSD/angsd/wiki/SFS
+
 # Watterson thetha
 https://www.biostars.org/p/150600/
 
 https://www.biostars.org/p/178983/
+
 
 # Raxml tree making
 #### Generate A Tree With Bootstrap
