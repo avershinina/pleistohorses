@@ -34,7 +34,7 @@ g = 5 # generation time
 # In[162]:
 
 
-A_psmc = np.genfromtxt("/A.5y.plot.0.txt", skip_header=5)
+A_psmc = np.genfromtxt("/A.5y.plot.0.txt", skip_header=5) # btw, there is probably an easier way to do it without using numpy
 B_psmc = np.genfromtxt("/B.5y.plot.1.txt", skip_header=2)
 
 
