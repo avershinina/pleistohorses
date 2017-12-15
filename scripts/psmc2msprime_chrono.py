@@ -4,7 +4,7 @@
 # # 13-14 Dec 2017
 # ### A. Vershinina
 # ### Goal: retrieve PSMC data and convert it into msprime-readable format
-# Here I config is created with events sorted chronologically.
+# Here config is created with events sorted chronologically.
 
 # ## Import packages and specify constant variables
 
