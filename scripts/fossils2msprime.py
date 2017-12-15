@@ -33,3 +33,13 @@ for pop_id, t in fossils:
     print (
         "[msprime.Sample(population={}, time={}) for _ in range(2)] +".format(pop_id, t), 
         file = open("msprime_samples.txt", "a"))
+    
+fossils_a = years2samples(y_a, g, 1)
+fossils_b = years2samples(y_b, g, 0)
+fossils_a_b = fossils_a + fossils_b
+
+for pop_id, t in fossils_a_b:
+    # msprime generates haploids, so we need 2 haplotypes for each time point
+    print (
+        "[msprime.Sample(population={}, time={}) for _ in range(2)] +".format(pop_id, t), 
+file = open("msprime_samples_a_b.txt", "a"))
