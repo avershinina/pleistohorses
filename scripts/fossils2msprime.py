@@ -5,6 +5,10 @@
 # imitating a number of ancient samples 
 # having different radiocarbon ages.
 
+# import all necessary packages
+from __future__ import print_function
+import random
+
 def generate_years(youngest_date, oldest_date, nsamples):
     """
     generate a list of dates - imitate a number (=nsamples) of paleo samples
