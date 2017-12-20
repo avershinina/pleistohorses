@@ -17,16 +17,15 @@ import sys
 import math
 import argparse
 from datetime import datetime
-import random
 import gzip
-import os
+import os 
 # import config file, msprime module is there
 from msprime_universal_config import *
 
-def eprint(*args, **kwargs):
+def eprint(*args, **kwargs): # Stolen https://github.com/armartin/ancestry_pipeline/blob/a0e6873a5f0201e8d72588365562d63a73cf2751/simulate_prs.py
     print(*args, file=sys.stderr, **kwargs)
 
-def current_time():
+def current_time(): # Also stolen
     return(' [' + datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S') + ']')
 
 
@@ -54,7 +53,7 @@ def create_vcf (TS, locusname):
     with gzip.open(locusname + '_out_of_NA_nhaps_' + '_'.join(map(str, nhaps)) + '.vcf.gz', "wb") as vcf_file:
         TS.write_vcf(vcf_file, 2)
 
-def main(args):
+def main(args): # TODO: out_of_NA seems redundant  
     """
     generate/load coalescent simulations
     """
@@ -76,7 +75,7 @@ def main(args):
     
     print
     eprint(simulation)
-    eprint('Number of modern haplotypes PRZ and DOM: ' + ','.join(map(str, nhaps)))
+    eprint('Number of modern haplotypes, Pr first and Dom second: ' + ','.join(map(str, nhaps)))
     eprint('Number of trees: ' + str(simulation.get_num_trees()))
     eprint('Number of mutations: ' + str(simulation.get_num_mutations()))
     eprint('Sequence length: ' + str(simulation.get_sequence_length()))
