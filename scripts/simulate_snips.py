@@ -49,7 +49,7 @@ def out_of_NA (locus, r_rate, mut_rate, pop_config, demography, mm, samples):
     return TS
 
 
-def create_vcf (TS, locusname):
+def create_vcf (TS, locusname): # should make it bgzip, not gzip, and then tabix immediately.
     with gzip.open(locusname + '_out_of_NA_nhaps_' + '_'.join(map(str, nhaps)) + '.vcf.gz', "wb") as vcf_file:
         TS.write_vcf(vcf_file, 2)
 
