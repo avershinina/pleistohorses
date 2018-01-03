@@ -47,6 +47,6 @@ def convert_to_missing(callset, sampleID, endog):
     print 'New array length: {}'.format(len(x))
     return x
 
-Usage:
+# Usage:
 convert_to_missing(vcf, 200, 0.01)
 
