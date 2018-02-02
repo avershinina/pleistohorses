@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 # A. Vershinina
-# Goal: take your BAM file, add RG and other flags, recalibrate using mapdamage
+# Goal: take your BAM file, add RG and other flags, realign around indels, recalibrate using mapdamage
 
 OUT_DIR=/path/to/out
 cd ${OUT_DIR}
