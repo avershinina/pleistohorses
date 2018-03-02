@@ -1,3 +1,4 @@
+# !/usr/bin/python3
 # 1 March 2018
 # A. Vershinina together with https://github.com/AlexKnyshov
 
@@ -53,7 +54,7 @@ def jump_to_next_interval(bedfile, iterator):
     m = min(dists)
     return m       
 
-COORDS=[] # empty list init
+COORDs=[] # empty list init
 i = start_1st_f # start from the first usable feature
 while i < end_last_f:
     start_c = i
@@ -64,10 +65,10 @@ while i < end_last_f:
             ok = True
             break
     if ok:
-        COORDS = extract_region(start_c, end_c, COORDS)
+        COORDs = extract_region(start_c, end_c, COORDs)
         i = i + s
     else:
         m = jump_to_next_interval(b, i)
         i = i + m
-print COORDS
+print COORDs
 # TODO: finalize bed, make iteration by chromosomes
