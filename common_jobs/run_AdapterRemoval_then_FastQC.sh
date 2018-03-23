@@ -32,3 +32,5 @@ do
 	echo "file ${SAMPLE} QC done"
 done
 echo "FastQC done"
+
+Rscript adapter_removal_summary_stat.R # collect how many reads were retained after trimming
