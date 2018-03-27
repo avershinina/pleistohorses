@@ -4,6 +4,7 @@
 # This version is collecting only a number of mapped reads on chr 1,2 and 3. 
 # Input: folder with idxstat results
 # Output: summary csv file foldername.chr1-2-3-idxstats.csv
+# Usage: Rscript collect_stats.R /path/folder/name
 
 args = commandArgs(trailingOnly=TRUE)
 filepathidx=args[1]
