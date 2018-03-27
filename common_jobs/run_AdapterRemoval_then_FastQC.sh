@@ -28,7 +28,7 @@ echo "trimming finished"
 for f in $FILES
 do
 	SAMPLE=$(echo ${f} | sed 's/[.].*//')
-	FQC ${SAMPLE}.truncated.gz
+	$FQC ${SAMPLE}.truncated.gz
 	echo "file ${SAMPLE} QC done"
 done
 echo "FastQC done"
