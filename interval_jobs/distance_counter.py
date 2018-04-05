@@ -3,7 +3,9 @@
 # Goal: calculate distances between features in bed file
 # Input: regular bed file parsable by pybedtools
 # Output: file with distance between 
-
+################
+# this is ugly and not working
+################
 from pybedtools import BedTool
 inserts = BedTool('aGenomes.inserts.bed')
 delets = BedTool('aGenomes.delets.bed')
