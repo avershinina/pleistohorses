@@ -24,10 +24,14 @@ names(dists_i) <- "dists_inserts"
 dists_d <- as.data.frame(s_d-e_d)
 names(dists_d) <- "dists_delets"
 
-png('deletions_distances_btw_features_histo.png')
-hist(as.numeric(dists_d$dists_delets), breaks = 1000)
+png('deletions_300kb_distances_btw_features_histo.png')
+hist(dists_d[dists_d$dists_delets>0,], breaks = 1000000, xlim = c(0,300))
 dev.off()
 
-png('insertions_distances_btw_features_histo.png')
-hist(as.numeric(dists_i$dists_inserts), breaks = 1000)
+png('insertions_100kb_distances_btw_features_histo.png')
+hist(dists_i[dists_i$dists_inserts>0,], breaks = 1000000, xlim = c(0,100))
+dev.off()
+
+png('insertions_50kb_distances_btw_features_histo.png')
+hist(dists_i[dists_i$dists_inserts>0,], breaks = 1000000, xlim = c(0,50))
 dev.off()
