@@ -19,6 +19,6 @@ chr <- subset(r, div<args[2] & seq==args[3] & class!="Low_complexity" & class !=
 bed <- subset(chr, select=c(seq, start, end))
 message("You selected ", nrow(chr), " repeats")
 
-write.csv(chr, file=paste(args[3], ".div.", args[2], ".rmsk.info"))
+write.csv(chr, file=paste(args[3], ".div.", args[2], ".rmsk.info")) # should use sep="." here
 write.table(bed, sep="\t", file=paste(args[3], ".div.", args[2], ".rmsk.bed"))
 cat("done\n")
