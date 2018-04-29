@@ -4,10 +4,7 @@
 # This is a table with headers. 
 # It filters out for -div option, removes "low complexity" and "simple repeat" entries, takes a chromosome you desire, and finally exports 2 files:
 # file with a short info about repeats
-# filebed file of filtered repeats
-# usage: script.R rptmsk.txt div chr
-# Example: 
-# test if there is at least one argument: if not, return an error
+# bed file of filtered repeats
 args = commandArgs(trailingOnly=TRUE)
 if (length(args) == 0){
   cat("Syntax: Rscript [script.R] [rptmsk.txt] [divergence] [chrom]\n")
@@ -24,6 +21,3 @@ message("You selected ", nrow(chr), " repeats")
 write.csv(chr, file=paste(args[3], ".div.", args[2], ".rmsk.info"))
 write.table(bed, sep="\t", file=paste(args[3], ".div.", args[2], ".rmsk.bed"))
 cat("done\n")
-
-
-
