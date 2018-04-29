@@ -7,11 +7,12 @@
 # bed file of filtered repeats
 args = commandArgs(trailingOnly=TRUE)
 if (length(args) == 0){
-  cat("Syntax: Rscript [script.R] [rptmsk.txt] [divergence] [chrom]\n")
-  cat("Example: Rscript [script.R] rptmsk.txt 20 chr1 \n")
+  cat("Syntax: Rscript [script.R] [rptmsk.txt.gz] [divergence] [chrom]\n")
+  cat("Example: Rscript [script.R] rptmsk.txt.gz 20 chr1 \n")
   quit()
 }
-r <- read.table(args[1], header = F, skip=2)
+rz=gzfile(args[1],'rt')   
+r <- read.table(rz, header = F, skip=2)
 h <- c("SW", "div","del", "ins", "seq", "start", "end", "left", "strand", "name","class", "pos_begin", "pos_end", "pos_left", "ID")
 names(r) <- h
 chr <- subset(r, div<args[2] & seq==args[3] & class!="Low_complexity" & class !="Simple_repeat", select=c(SW, div, seq, start, end, strand, name, class,ID))
