@@ -1,3 +1,13 @@
+- [Working with raw data](#working-with-raw-data)
+  * [Collect statistics](#collect-statistics)
+  * [Mapping](#mapping)
+  * [Format convertion](#convertion)
+- [Calculate and collect statistics](#calculate-and-collect-statistics)
+  * [VCF](#vcf)
+  * [BAM](#bam)
+- [Tidy up the data](#tidy-up-the-data)
+- [Misc](#misc)
+
 # Working with raw data
 ## Collect statistics
 * count_reads_SE_fastq.sh  
@@ -7,15 +17,17 @@
 * add_RG_indel_realign_MD_recal.sh 
 * index-bam-files.sh
 * sort-index-bams.sh
-## Convertion
+## Format convertion
 * bam2fq.sh
 
 # Calculate and collect statistics
 ## VCF
 * calculate_pi_on_multisample_vcf.sh 
 ## BAM
+*	coverage_stats_from_bam.R
 * flagstat_collect_stats.R
 * idxstat_collect_stats.R  
+
 
 # Tidy up the data
 * run_AdapterRemoval_then_FastQC.sh
