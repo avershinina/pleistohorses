@@ -2,6 +2,7 @@
 # 14 Sept 2018
 # A. Vershinina
 # Goal: take a BED file, containing snps.
+# Note for self: There is actually a feature --thin in vcfutils that does exactly this.
 # Draw from the file only those snps, that are spaced by more than N bp between each other.
 # At! This now works regardless of chromosome number, so BED file should contain only elements of one chromosome.
 f='path/test_2.bed'
