@@ -19,6 +19,7 @@
 * sort-index-bams.sh
 ## Format convertion
 * bam2fq.sh
+* bam2fasta.sh - using ANGSD converts BAM to fasta using IUPAC codes with a treshold for het conversion. 
 
 # Calculate and collect statistics
 ## VCF
