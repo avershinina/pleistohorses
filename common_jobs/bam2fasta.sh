@@ -6,7 +6,7 @@
 HOME=/avershinina # EDIT
 FILES=${HOME}/horse_genomes/*.bam
 ANGSD=${HOME}/tools/angsd/angsd
-FILTERS='-minQ 20 -minMapQ 30 -uniqueOnly -setMinDepth 5 -setMaxDepth 100 -iupacRatio 0.35'
+FILTERS='-minQ 20 -minMapQ 30 -uniqueOnly -setMinDepth 5 -setMaxDepth 100 -iupacRatio 0.35' # EDIT
 REF=${HOME}/horse_genomes/Equus_cab_nucl_wChrUn.fasta
 
 echo "Starting conversion, transitions included"
@@ -21,7 +21,7 @@ echo "With Ti conversion done"
 echo "Starting conversion, transitions excluded"
 
 for SAMPLE in ${FILES}; do
-	NAME=$(echo ${f} | sed 's/[.].*//')
+	NAME=$(echo ${SAMPLE} | sed 's/[.].*//')
 	echo "Making wo_Ti fasta for ${NAME}"
 	$ANGSD -doFasta 4 -doCounts 1 $FILTERS -rmTrans 1 -ref $REF -i $SAMPLE -out ${NAME}_wo_Ti
 done
