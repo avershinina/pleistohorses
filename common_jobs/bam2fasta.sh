@@ -18,7 +18,7 @@ for SAMPLE in ${FILES}; do
 done
 echo "With Ti conversion done"
 
-echo "Starting conversion, transitions excluded"
+echo "Starting conversion, transitions excluded" ## This option currently does not work. ANGSD gives segfault.
 
 for SAMPLE in ${FILES}; do
 	NAME=$(echo ${SAMPLE} | sed 's/[.].*//')
