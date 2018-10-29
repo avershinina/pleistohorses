@@ -46,8 +46,12 @@ sort -k1,1 -k2,2n $BED > ${OUT_DIR}/${BED}.sorted
 
 bedtools complement -i ${OUT_DIR}/${BED}.sorted -g $REF > ${OUT_DIR}/${BED}.complemented
 
-# Merge features that are too close to each other. Remember that bed_from_bed works only if step>region. Thus merge parameter -d should be the same as region length+1 
+# Merge features that are too close to each other. Remember that bed_from_bed works only if step>region. Thus merge parameter -d should be the same as region length
 
-bedtools merge -i ${OUT_DIR}/${BED}.complemented -c 1 -o count -d $REGION
+bedtools merge -i ${OUT_DIR}/${BED}.complemented -c 1 -o count -d $REGION >  ${OUT_DIR}/${BED}.merged
 
-# 
+# Get regions from the guide file
+
+cd ${OUT_DIR}
+
+python ../bed_from_bed.py -f ${OUT_DIR}/${BED}.merged -r $REGION -s $STEP -o ${OUT}.extracted_regions.bed
