@@ -13,6 +13,7 @@
 # chr1	185838109
 # chrX	124114077
 # chr2	120857687
+# This file should be sorted the same way as bed file.
 
 # -r length of the region to be extracted for the final loci set.
 # -s step to be used to space regions by MIN(s). Let's say you want regions of 1kb spaced by ate least 30kb. The would be -s 30000 -r 1000
@@ -36,15 +37,19 @@ o) OUT=$OPTARG;;
 esac
 done
 
+echo 'reading' $BED 'file' 
+
+
 mkdir ${OUT}_outdir
 OUT_DIR=${OUT}_outdir
 
 # Sort for bedtools
 sort -k1,1 -k2,2n $BED > ${OUT_DIR}/${BED}.sorted
+sort -k1,1 -k2,2n $REF > ${OUT_DIR}/${REF}.sorted
 
 # Make an inverse of nonneutral regions, i.e. create a guide bed file.
 
-bedtools complement -i ${OUT_DIR}/${BED}.sorted -g $REF > ${OUT_DIR}/${BED}.complemented
+bedtools complement -i ${OUT_DIR}/${BED}.sorted -g ${OUT_DIR}/${REF}.sorted > ${OUT_DIR}/${BED}.complemented
 
 # Merge features that are too close to each other. Remember that bed_from_bed works only if step>region. Thus merge parameter -d should be the same as region length
 
