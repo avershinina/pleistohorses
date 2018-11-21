@@ -1,13 +1,13 @@
-#!/usr/bin/bash
+#!/usr/local/bin/bash
 # 23 Oct 2018
 # A. Vershinina
 # Goal: convert BAM files to FASTA files using ANGSD. Create two sets of fastas: with thransitions and without transitions.
 
-HOME=/projects/redser3-notbackedup/projects/alisa_beringia/horse-genomes
-FILES=${HOME}/horse_genomes/*.bam
-ANGSD=${HOME}/tools/angsd/angsd
+HOME=/projects/path
+FILES=/projects/path/f_hat/*.bam
+ANGSD=/soe/avershinina/tools/angsd/angsd
 FILTERS='-minQ 25 -minMapQ 25 -uniqueOnly -setMinDepth 5 -setMaxDepth 100 -nThreads 10 -howOften 1000'
-REF=${HOME}/horse_genomes/Equus_cab_nucl_wChrUn.fasta
+REF=${HOME}/horse-genomes/Equus_cab_nucl_wChrUn.fasta
 
 echo "Starting conversion, transitions included"
 
@@ -28,10 +28,10 @@ done
 echo "Without Ti conversion done"
 
 
-mkdir ${HOME}/horse_genomes/fastas_w_Ti
-mkdir ${HOME}/horse_genomes/fastas_wo_Ti
-OUT_w_Ti=${HOME}/horse_genomes/fastas_w_Ti
-OUT_wo_Ti=${HOME}/horse_genomes/fastas_wo_Ti
+mkdir fastas_w_Ti
+mkdir fastas_wo_Ti
+OUT_w_Ti=/fastas_w_Ti
+OUT_wo_Ti=/fastas_wo_Ti
 
 mv *_w_Ti* $OUT_w_Ti
 mv *_wo_Ti* $OUT_wo_Ti
