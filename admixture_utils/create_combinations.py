@@ -7,7 +7,7 @@ from itertools import permutations
 l = raw_input("Enter a list of genomes in fasta format separated by white space ").split()
 combos = []
 
-for comb in permutations(l, 3):
+for comb in permutations(l, 4):
 	combos.append(comb)
 
 with open('combos.txt', 'w') as f:

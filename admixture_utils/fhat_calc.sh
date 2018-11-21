@@ -2,16 +2,49 @@
 # 20 Nov 2018
 # A. Vershinina
 # Goal: run fhat with different combinations of BAM files using James's program.
+# Source for fhat and dstat programs: https://github.com/jacahill/Admixture
+# calc with transitions
+# Requirement: create a text file with all possible combinations for genomes of interest using create_combinations.py
+# It can also be just a file with one line:
+# fasta1 fasta2 fasta3 fasta4
+# (separated by space).
 
-DSTAT=/soe/avershinina/tools/Admixture/Dstat
+read -p 'Outgroup .fasta: ' OG
+read -p 'Combinations in .txt: ' COMBOS
+
 FHAT=/soe/avershinina/tools/Admixture/Fhat
 FHAT_PARSE=/soe/avershinina/tools/Admixture/F_hat_parser.py
-OG=
+JACK=/soe/avershinina/tools/Admixture/weighted_block_jackknife_fhat.py
+
 BLOCK=5000000
 
+while IFS=' ' read p1 p2 p3 p4
+do 
+	$FHAT $p1 $p2 $p3 $p4 $OG $BLOCK > ${p1}${p2}${p3}${p4}_OG.fhat
+done < $COMBOS 
+wait
 
-Dstat P1_all.fa P2_all.fa P3_all.fa P4_all.fa OG_all.fa 5000000 > P1_P2_P3_P4_OG.fhat
+for f in *_OG.fhat
+do
+	python $FHAT_PARSE ${f} > ${f}.admx
+	python $JACK ${f} $BLOCK > ${f}.err
+done
+wait
 
-C=$(echo 'for combo in  {BAM1,BAM2,BAM3}{BAM1,BAM2,BAM3}{BAM1,BAM2,BAM3}; do echo $combo; done | egrep -v 'BAM1.*BAM1|BAM2.*BAM2|BAM3.*BAM3' | cut --output-delimiter=$'\n' -c1-4,5-9,10-14')
+# calc without transitions
 
-for combo in  {BAM1,BAM2,BAM3}{BAM1,BAM2,BAM3}{BAM1,BAM2,BAM3}; do echo $combo; done | egrep -v 'BAM1.*BAM1|BAM2.*BAM2|BAM3.*BAM3' | cut --output-delimiter=$' ' -c1-4,5-8,9-14 > combos.txt
+FHAT_TV=/soe/avershinina/tools/Admixture/Fhat_tv
+
+while IFS=' ' read p1 p2 p3 p4
+do 
+	$FHAT_TV $p1 $p2 $p3 $p4 $OG $BLOCK > ${p1}${p2}${p3}${p4}_OG_noTV.fhat
+done < $COMBOS 
+wait
+
+for f in *_OG_noTV.fhat
+do
+	python $FHAT_PARSE ${f} > ${f}.admx
+	python $JACK ${f} $BLOCK > ${f}.err
+done
+wait
+echo "All done"
