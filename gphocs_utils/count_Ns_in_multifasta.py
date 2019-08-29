@@ -17,7 +17,7 @@ g = SeqIO.parse(infile, "fasta")
 final = []
 for s in g:
 	n = s.seq.lower().count('n')
-	final.append([s.name,n]) # this script is not optimizet AT ALLL!!!!
+	final.append([s.name,n]) # this script is not optimized AT ALLL!!!!
 
 with open(outfile, 'wb') as myfile:
     my_df = pd.DataFrame(final)
