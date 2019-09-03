@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# https://www.biostars.org/p/4881/
+# Stolen from https://www.biostars.org/p/4881/
 
 import sys
 import gzip
