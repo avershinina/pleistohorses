@@ -2,7 +2,8 @@
 # A. Vershinina
 # 25 Jan 2018
 # Goal: Run pca projecting one panel into another.
-# Solution was found here https://groups.google.com/forum/#!topic/plink2-users/NplJ88jjMOU
+# Solution was found here:
+# https://groups.google.com/forum/#!searchin/plink2-users/projection|sort:date/plink2-users/W6DL5-hs_Q4/Z6a7xZCFBAAJ
 # Usage: script.sh samples.txt
 
 if [ "$#" -lt 1 ] # are there less than 2 arguments?
