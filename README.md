@@ -1,7 +1,5 @@
 # Evolution and extinction of caballine horses in Ice Age Beringia
-.. |NSF-1417036| image:: https://img.shields.io/badge/NSF-1417036-blue.svg
-   :target: https://nsf.gov/awardsearch/showAward?AWD_ID=1417036
-   :alt: NSF award info
+[![NSF-1417036(https://img.shields.io/badge/NSF-1417036-blue.svg)](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1417036)
    
    
 This NSF-supported collaborative project (award # 1417036) looks into the past to inform the future. 
